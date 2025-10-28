@@ -18,8 +18,15 @@
   const GLOBAL_CHEATS_KEY = "tqplus:v3:globalCheats";
 
   // ===================== DATA (present-based for all tenses) =====================
- const GAME2 = {
-  // Level 1 — super easy, positive, simple family adjectives
+ // GAME 2 — Family & Friendship (Adjective Agreement + Connector: pero)
+// Direction: English -> Spanish
+// Rules applied:
+// - Only final ? is used in answers (no inverted ¿)
+// - Accents required
+// - Pronouns not required EXCEPT "usted" must appear when marked (formal)
+// - Connector for Game 2 appears: "pero"
+
+const PRESENT = {
   1: [
     { en: "I have a big family", es: "Tengo una familia grande" },
     { en: "My family is small", es: "Mi familia es pequeña" },
@@ -27,27 +34,23 @@
     { en: "My father is strict", es: "Mi padre es estricto" },
     { en: "My sister is funny", es: "Mi hermana es divertida" },
     { en: "My brother is tall", es: "Mi hermano es alto" },
-    { en: "My parents are patient", es: "Mis padres son pacientes" },
     { en: "My grandparents are generous", es: "Mis abuelos son generosos" },
+    { en: "My cousins are friendly", es: "Mis primos son simpáticos" },
     { en: "My best friend is loyal", es: "Mi mejor amigo es leal" },
-    { en: "My friends are friendly", es: "Mis amigos son simpáticos" }
+    { en: "My friends are honest", es: "Mis amigos son honestos" }
   ],
-
-  // Level 2 — still easy; add a few negatives and simple questions
   2: [
     { en: "I have two sisters", es: "Tengo dos hermanas" },
     { en: "I do not have brothers", es: "No tengo hermanos" },
-    { en: "My cousin is hardworking", es: "Mi primo es trabajador" },
-    { en: "My aunt is strict but fair", es: "Mi tía es estricta pero justa" },
+    { en: "My aunt is strict", es: "Mi tía es estricta" },
     { en: "My uncle is funny", es: "Mi tío es gracioso" },
+    { en: "María is my cousin", es: "María es mi prima" },
+    { en: "Juan is my cousin", es: "Juan es mi primo" },
     { en: "Is your family big?", es: "Tu familia es grande?" },
     { en: "Are your parents nice?", es: "Tus padres son amables?" },
     { en: "Do you have a close family?", es: "Tienes una familia unida?" },
-    { en: "My sister is shy", es: "Mi hermana es tímida" },
-    { en: "My friends are honest", es: "Mis amigos son honestos" }
+    { en: "My sister is shy", es: "Mi hermana es tímida" }
   ],
-
-  // Level 3 — introduce connector "pero"; mix pos/neg/questions
   3: [
     { en: "My mother is strict but fair", es: "Mi madre es estricta pero justa" },
     { en: "My father is serious but kind", es: "Mi padre es serio pero amable" },
@@ -56,12 +59,10 @@
     { en: "I do not argue with my parents", es: "No discuto con mis padres" },
     { en: "Do you have a good friend?", es: "Tienes un buen amigo?" },
     { en: "Are your friends loyal?", es: "Tus amigos son leales?" },
-    { en: "My best friend is funny but honest", es: "Mi mejor amigo es gracioso pero honesto" },
+    { en: "My best friend Ana is kind", es: "Mi mejor amiga Ana es amable" },
     { en: "My parents are strict", es: "Mis padres son estrictos" },
     { en: "I have a small but happy family", es: "Tengo una familia pequeña pero feliz" }
   ],
-
-  // Level 4 — more friendship statements; a little richer
   4: [
     { en: "I get on well with my family", es: "Me llevo bien con mi familia" },
     { en: "Sometimes we argue, but we talk", es: "A veces discutimos, pero hablamos" },
@@ -70,12 +71,10 @@
     { en: "I do not like toxic friendships", es: "No me gustan las amistades tóxicas" },
     { en: "Do you trust your friends?", es: "Confías en tus amigos?" },
     { en: "Do you respect your parents?", es: "Respetas a tus padres?" },
-    { en: "My cousin is creative but impatient", es: "Mi primo es creativo pero impaciente" },
+    { en: "My cousin Pablo is creative", es: "Mi primo Pablo es creativo" },
     { en: "My sister is calm and generous", es: "Mi hermana es tranquila y generosa" },
     { en: "My father is strict but patient", es: "Mi padre es estricto pero paciente" }
   ],
-
-  // Level 5 — bring in (formal) with usted; balance pos/neg/questions
   5: [
     { en: "Do you have a big family? (formal)", es: "Tiene usted una familia grande?" },
     { en: "Do you get on with your family? (formal)", es: "Se lleva usted bien con su familia?" },
@@ -88,8 +87,6 @@
     { en: "My brother is kind but disorganised", es: "Mi hermano es amable pero desorganizado" },
     { en: "A good friend is honest and patient", es: "Un buen amigo es honesto y paciente" }
   ],
-
-  // Level 6 — deeper opinions; more adjective agreement variety
   6: [
     { en: "My friends are funny but sometimes immature", es: "Mis amigos son graciosos pero a veces inmaduros" },
     { en: "My parents are strict but understanding", es: "Mis padres son estrictos pero comprensivos" },
@@ -102,8 +99,6 @@
     { en: "My friends are generous and respectful", es: "Mis amigos son generosos y respetuosos" },
     { en: "My family is strict but fair", es: "Mi familia es estricta pero justa" }
   ],
-
-  // Level 7 — realistic teen themes begin to appear
   7: [
     { en: "Sometimes my parents are strict but fair", es: "A veces mis padres son estrictos pero justos" },
     { en: "I do not hang out with negative people", es: "No salgo con gente negativa" },
@@ -116,8 +111,6 @@
     { en: "I do not like false friends", es: "No me gustan los amigos falsos" },
     { en: "A good friend listens and respects", es: "Un buen amigo escucha y respeta" }
   ],
-
-  // Level 8 — more nuanced adjectives; balance of pos/neg/questions
   8: [
     { en: "My parents are protective but reasonable", es: "Mis padres son protectores pero razonables" },
     { en: "My mother is strict but affectionate", es: "Mi madre es estricta pero cariñosa" },
@@ -130,8 +123,6 @@
     { en: "My sister is optimistic and patient", es: "Mi hermana es optimista y paciente" },
     { en: "A true friend is loyal but sincere", es: "Un amigo verdadero es leal pero sincero" }
   ],
-
-  // Level 9 — richer opinions; clear LC prep tone
   9: [
     { en: "My parents are strict but they support me", es: "Mis padres son estrictos pero me apoyan" },
     { en: "My friends are loyal but not perfect", es: "Mis amigos son leales pero no perfectos" },
@@ -144,8 +135,6 @@
     { en: "My family is strict but supportive", es: "Mi familia es estricta pero solidaria" },
     { en: "A good friend is reliable and respectful", es: "Un buen amigo es fiable y respetuoso" }
   ],
-
-  // Level 10 — mature, exam-ready but still concise
   10: [
     { en: "My parents are demanding but fair", es: "Mis padres son exigentes pero justos" },
     { en: "My friends are sincere and supportive", es: "Mis amigos son sinceros y solidarios" },
@@ -159,6 +148,9 @@
     { en: "I choose loyal friends over popular friends", es: "Elijo amigos leales en lugar de amigos populares" }
   ]
 };
+
+const deepCopy = obj => JSON.parse(JSON.stringify(obj));
+const DATASETS = { Present: PRESENT, Past: deepCopy(PRESENT), Future: deepCopy(PRESENT) };
 
   // ===================== Global cheats =====================
   const clampCheats = n => Math.max(0, Math.min(GLOBAL_CHEATS_MAX, n|0));
