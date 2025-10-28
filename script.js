@@ -18,20 +18,147 @@
   const GLOBAL_CHEATS_KEY = "tqplus:v3:globalCheats";
 
   // ===================== DATA (present-based for all tenses) =====================
-  const PRESENT = {
-    1:[{en:"Who?",es:"¿Quién?"},{en:"What?",es:"¿Qué?"},{en:"Where?",es:"¿Dónde?"},{en:"When?",es:"¿Cuándo?"},{en:"Why?",es:"¿Por qué?"},{en:"How?",es:"¿Cómo?"},{en:"Which?",es:"¿Cuál?"},{en:"Whose?",es:"¿De quién?"},{en:"How many?",es:"¿Cuántos?"},{en:"How much?",es:"¿Cuánto?"},{en:"From where?",es:"¿De dónde?"},{en:"To where?",es:"¿Adónde?"},{en:"Since when?",es:"¿Desde cuándo?"},{en:"Until when?",es:"¿Hasta cuándo?"},{en:"How often?",es:"¿Con qué frecuencia?"},{en:"How old?",es:"¿Cuántos años?"}],
-    2:[{en:"Who is it?",es:"¿Quién es?"},{en:"What is it?",es:"¿Qué es?"},{en:"Where are you?",es:"¿Dónde estás?"},{en:"When is it?",es:"¿Cuándo es?"},{en:"Why is it cold?",es:"¿Por qué hace frío?"},{en:"How are you?",es:"¿Cómo estás?"},{en:"Which one?",es:"¿Cuál?"},{en:"Whose book is it?",es:"¿De quién es el libro?"},{en:"How many students?",es:"¿Cuántos estudiantes?"},{en:"How much money?",es:"¿Cuánto dinero?"},{en:"Where is it?",es:"¿Dónde está?"},{en:"When do we meet?",es:"¿Cuándo nos vemos?"}],
-    3:[{en:"Who are you?",es:"¿Quién eres?"},{en:"What do you want?",es:"¿Qué quieres?"},{en:"Where do you live?",es:"¿Dónde vives?"},{en:"When do you study?",es:"¿Cuándo estudias?"},{en:"Why are you here?",es:"¿Por qué estás aquí?"},{en:"How do you feel?",es:"¿Cómo te sientes?"},{en:"Which is your house?",es:"¿Cuál es tu casa?"},{en:"Whose idea is it?",es:"¿De quién es la idea?"},{en:"How many brothers do you have?",es:"¿Cuántos hermanos tienes?"},{en:"How much water do you drink?",es:"¿Cuánta agua bebes?"}],
-    4:[{en:"Who is your teacher?",es:"¿Quién es tu profesor?"},{en:"What time is it?",es:"¿Qué hora es?"},{en:"Where do you work?",es:"¿Dónde trabajas?"},{en:"When do you sleep?",es:"¿Cuándo duermes?"},{en:"Why are you sad?",es:"¿Por qué estás triste?"},{en:"How do you learn?",es:"¿Cómo aprendes?"},{en:"Which subject do you like?",es:"¿Qué asignatura te gusta?"},{en:"Whose car is this?",es:"¿De quién es este coche?"},{en:"How many friends do you have?",es:"¿Cuántos amigos tienes?"},{en:"How long is the class?",es:"¿Cuánto dura la clase?"}],
-    5:[{en:"Who are they?",es:"¿Quiénes son ellos?"},{en:"What are you doing?",es:"¿Qué haces?"},{en:"Where are you going?",es:"¿Adónde vas?"},{en:"When do you arrive?",es:"¿Cuándo llegas?"},{en:"Why are you late?",es:"¿Por qué llegas tarde?"},{en:"How do you know?",es:"¿Cómo sabes?"},{en:"Which one do you prefer?",es:"¿Cuál prefieres?"},{en:"Whose idea is that?",es:"¿De quién es esa idea?"},{en:"How many languages do you speak?",es:"¿Cuántos idiomas hablas?"},{en:"How much time do we have?",es:"¿Cuánto tiempo tenemos?"}],
-    6:[{en:"Who helps you?",es:"¿Quién te ayuda?"},{en:"What do you need?",es:"¿Qué necesitas?"},{en:"Where is your house?",es:"¿Dónde está tu casa?"},{en:"When do you eat lunch?",es:"¿Cuándo almuerzas?"},{en:"Why do you study Spanish?",es:"¿Por qué estudias español?"},{en:"How do you get to school?",es:"¿Cómo llegas a la escuela?"},{en:"Which class are you in?",es:"¿En qué clase estás?"},{en:"Whose turn is it?",es:"¿De quién es el turno?"},{en:"How many pets do you have?",es:"¿Cuántas mascotas tienes?"},{en:"How much does it cost?",es:"¿Cuánto cuesta?"}],
-    7:[{en:"Who helps you at home?",es:"¿Quién te ayuda en casa?"},{en:"What do you eat for breakfast?",es:"¿Qué desayunas?"},{en:"Where do you go on weekends?",es:"¿Adónde vas los fines de semana?"},{en:"When do you wake up?",es:"¿Cuándo te despiertas?"},{en:"Why do you run?",es:"¿Por qué corres?"},{en:"How do you feel today?",es:"¿Cómo te sientes hoy?"},{en:"Which movie do you like?",es:"¿Qué película te gusta?"},{en:"Whose phone is this?",es:"¿De quién es este teléfono?"},{en:"How many hours do you study?",es:"¿Cuántas horas estudias?"},{en:"How much homework do you have?",es:"¿Cuánta tarea tienes?"}],
-    8:[{en:"Who is calling?",es:"¿Quién llama?"},{en:"What are they doing?",es:"¿Qué hacen?"},{en:"Where do you go every day?",es:"¿Adónde vas cada día?"},{en:"When do you finish work?",es:"¿Cuándo terminas el trabajo?"},{en:"Why are you tired?",es:"¿Por qué estás cansado?"},{en:"How do you travel to school?",es:"¿Cómo viajas a la escuela?"},{en:"Which color do you like?",es:"¿Qué color te gusta?"},{en:"Whose bag is that?",es:"¿De quién es esa bolsa?"},{en:"How many people live here?",es:"¿Cuántas personas viven aquí?"},{en:"How much water do you drink every day?",es:"¿Cuánta agua bebes cada día?"}],
-    9:[{en:"Who opens the door?",es:"¿Quién abre la puerta?"},{en:"What do you say?",es:"¿Qué dices?"},{en:"Where do you go after class?",es:"¿Adónde vas después de clase?"},{en:"When do you arrive at school?",es:"¿Cuándo llegas a la escuela?"},{en:"Why do you leave early?",es:"¿Por qué te vas temprano?"},{en:"How do you do it?",es:"¿Cómo lo haces?"},{en:"Which car do you choose?",es:"¿Qué coche eliges?"},{en:"Whose shoes are these?",es:"¿De quién son estos zapatos?"},{en:"How many students pass?",es:"¿Cuántos estudiantes aprueban?"},{en:"How much milk do you drink?",es:"¿Cuánta leche bebes?"}],
-    10:[{en:"Who are you waiting for?",es:"¿A quién esperas?"},{en:"What are you thinking about?",es:"¿En qué piensas?"},{en:"Where do you want to go?",es:"¿Adónde quieres ir?"},{en:"When do you return home?",es:"¿Cuándo vuelves a casa?"},{en:"Why are you here?",es:"¿Por qué estás aquí?"},{en:"How do you learn so much?",es:"¿Cómo aprendes tanto?"},{en:"Which of these do you prefer?",es:"¿Cuál de estos prefieres?"},{en:"Whose turn is it to cook?",es:"¿De quién es el turno de cocinar?"},{en:"How many books do you read?",es:"¿Cuántos libros lees?"},{en:"How much time do we have?",es:"¿Cuánto tiempo tenemos?"}]
-  };
-  const deepCopy = obj => JSON.parse(JSON.stringify(obj));
-  const DATASETS = { Present: PRESENT, Past: deepCopy(PRESENT), Future: deepCopy(PRESENT) };
+ const GAME2 = {
+  // Level 1 — super easy, positive, simple family adjectives
+  1: [
+    { en: "I have a big family", es: "Tengo una familia grande" },
+    { en: "My family is small", es: "Mi familia es pequeña" },
+    { en: "My mother is kind", es: "Mi madre es amable" },
+    { en: "My father is strict", es: "Mi padre es estricto" },
+    { en: "My sister is funny", es: "Mi hermana es divertida" },
+    { en: "My brother is tall", es: "Mi hermano es alto" },
+    { en: "My parents are patient", es: "Mis padres son pacientes" },
+    { en: "My grandparents are generous", es: "Mis abuelos son generosos" },
+    { en: "My best friend is loyal", es: "Mi mejor amigo es leal" },
+    { en: "My friends are friendly", es: "Mis amigos son simpáticos" }
+  ],
+
+  // Level 2 — still easy; add a few negatives and simple questions
+  2: [
+    { en: "I have two sisters", es: "Tengo dos hermanas" },
+    { en: "I do not have brothers", es: "No tengo hermanos" },
+    { en: "My cousin is hardworking", es: "Mi primo es trabajador" },
+    { en: "My aunt is strict but fair", es: "Mi tía es estricta pero justa" },
+    { en: "My uncle is funny", es: "Mi tío es gracioso" },
+    { en: "Is your family big?", es: "Tu familia es grande?" },
+    { en: "Are your parents nice?", es: "Tus padres son amables?" },
+    { en: "Do you have a close family?", es: "Tienes una familia unida?" },
+    { en: "My sister is shy", es: "Mi hermana es tímida" },
+    { en: "My friends are honest", es: "Mis amigos son honestos" }
+  ],
+
+  // Level 3 — introduce connector "pero"; mix pos/neg/questions
+  3: [
+    { en: "My mother is strict but fair", es: "Mi madre es estricta pero justa" },
+    { en: "My father is serious but kind", es: "Mi padre es serio pero amable" },
+    { en: "My brother is tall but quiet", es: "Mi hermano es alto pero callado" },
+    { en: "My sister is smart and friendly", es: "Mi hermana es lista y simpática" },
+    { en: "I do not argue with my parents", es: "No discuto con mis padres" },
+    { en: "Do you have a good friend?", es: "Tienes un buen amigo?" },
+    { en: "Are your friends loyal?", es: "Tus amigos son leales?" },
+    { en: "My best friend is funny but honest", es: "Mi mejor amigo es gracioso pero honesto" },
+    { en: "My parents are strict", es: "Mis padres son estrictos" },
+    { en: "I have a small but happy family", es: "Tengo una familia pequeña pero feliz" }
+  ],
+
+  // Level 4 — more friendship statements; a little richer
+  4: [
+    { en: "I get on well with my family", es: "Me llevo bien con mi familia" },
+    { en: "Sometimes we argue, but we talk", es: "A veces discutimos, pero hablamos" },
+    { en: "My friends are supportive", es: "Mis amigos son solidarios" },
+    { en: "A true friend is loyal", es: "Un amigo verdadero es leal" },
+    { en: "I do not like toxic friendships", es: "No me gustan las amistades tóxicas" },
+    { en: "Do you trust your friends?", es: "Confías en tus amigos?" },
+    { en: "Do you respect your parents?", es: "Respetas a tus padres?" },
+    { en: "My cousin is creative but impatient", es: "Mi primo es creativo pero impaciente" },
+    { en: "My sister is calm and generous", es: "Mi hermana es tranquila y generosa" },
+    { en: "My father is strict but patient", es: "Mi padre es estricto pero paciente" }
+  ],
+
+  // Level 5 — bring in (formal) with usted; balance pos/neg/questions
+  5: [
+    { en: "Do you have a big family? (formal)", es: "Tiene usted una familia grande?" },
+    { en: "Do you get on with your family? (formal)", es: "Se lleva usted bien con su familia?" },
+    { en: "My best friend is reliable", es: "Mi mejor amigo es fiable" },
+    { en: "My friends are not perfect", es: "Mis amigos no son perfectos" },
+    { en: "My parents are loving but strict", es: "Mis padres son cariñosos pero estrictos" },
+    { en: "I have a small circle of friends", es: "Tengo un círculo pequeño de amigos" },
+    { en: "Do you argue with your parents?", es: "Discutes con tus padres?" },
+    { en: "Is your sister independent?", es: "Tu hermana es independiente?" },
+    { en: "My brother is kind but disorganised", es: "Mi hermano es amable pero desorganizado" },
+    { en: "A good friend is honest and patient", es: "Un buen amigo es honesto y paciente" }
+  ],
+
+  // Level 6 — deeper opinions; more adjective agreement variety
+  6: [
+    { en: "My friends are funny but sometimes immature", es: "Mis amigos son graciosos pero a veces inmaduros" },
+    { en: "My parents are strict but understanding", es: "Mis padres son estrictos pero comprensivos" },
+    { en: "My sister is creative and ambitious", es: "Mi hermana es creativa y ambiciosa" },
+    { en: "I do not accept toxic behaviour", es: "No acepto el comportamiento tóxico" },
+    { en: "Do you have loyal friends?", es: "Tienes amigos leales?" },
+    { en: "Are your parents supportive?", es: "Tus padres son solidarios?" },
+    { en: "Do you spend time with your family? (formal)", es: "Pasa usted tiempo con su familia?" },
+    { en: "My cousin is confident but arrogant", es: "Mi primo es seguro pero arrogante" },
+    { en: "My friends are generous and respectful", es: "Mis amigos son generosos y respetuosos" },
+    { en: "My family is strict but fair", es: "Mi familia es estricta pero justa" }
+  ],
+
+  // Level 7 — realistic teen themes begin to appear
+  7: [
+    { en: "Sometimes my parents are strict but fair", es: "A veces mis padres son estrictos pero justos" },
+    { en: "I do not hang out with negative people", es: "No salgo con gente negativa" },
+    { en: "My sister is friendly but stubborn", es: "Mi hermana es simpática pero terca" },
+    { en: "My brother is responsible and helpful", es: "Mi hermano es responsable y servicial" },
+    { en: "My friends are honest but direct", es: "Mis amigos son honestos pero directos" },
+    { en: "Do your parents trust you?", es: "Tus padres confían en ti?" },
+    { en: "Do you have supportive friends? (formal)", es: "Tiene usted amigos solidarios?" },
+    { en: "I have a close and loyal group", es: "Tengo un grupo cercano y leal" },
+    { en: "I do not like false friends", es: "No me gustan los amigos falsos" },
+    { en: "A good friend listens and respects", es: "Un buen amigo escucha y respeta" }
+  ],
+
+  // Level 8 — more nuanced adjectives; balance of pos/neg/questions
+  8: [
+    { en: "My parents are protective but reasonable", es: "Mis padres son protectores pero razonables" },
+    { en: "My mother is strict but affectionate", es: "Mi madre es estricta pero cariñosa" },
+    { en: "My father is patient and hardworking", es: "Mi padre es paciente y trabajador" },
+    { en: "I do not tolerate disrespect", es: "No tolero la falta de respeto" },
+    { en: "My friends are mature and realistic", es: "Mis amigos son maduros y realistas" },
+    { en: "Is your brother responsible?", es: "Tu hermano es responsable?" },
+    { en: "Do you trust your best friend? (formal)", es: "Confía usted en su mejor amigo?" },
+    { en: "My cousin is calm but lazy", es: "Mi primo es tranquilo pero perezoso" },
+    { en: "My sister is optimistic and patient", es: "Mi hermana es optimista y paciente" },
+    { en: "A true friend is loyal but sincere", es: "Un amigo verdadero es leal pero sincero" }
+  ],
+
+  // Level 9 — richer opinions; clear LC prep tone
+  9: [
+    { en: "My parents are strict but they support me", es: "Mis padres son estrictos pero me apoyan" },
+    { en: "My friends are loyal but not perfect", es: "Mis amigos son leales pero no perfectos" },
+    { en: "I do not accept controlling friends", es: "No acepto amigos controladores" },
+    { en: "My sister is ambitious and generous", es: "Mi hermana es ambiciosa y generosa" },
+    { en: "My brother is sensible but shy", es: "Mi hermano es sensato pero tímido" },
+    { en: "Do your friends respect your limits?", es: "Tus amigos respetan tus límites?" },
+    { en: "Do you have an honest group of friends? (formal)", es: "Tiene usted un grupo de amigos honesto?" },
+    { en: "I have a small but loyal circle", es: "Tengo un círculo pequeño pero leal" },
+    { en: "My family is strict but supportive", es: "Mi familia es estricta pero solidaria" },
+    { en: "A good friend is reliable and respectful", es: "Un buen amigo es fiable y respetuoso" }
+  ],
+
+  // Level 10 — mature, exam-ready but still concise
+  10: [
+    { en: "My parents are demanding but fair", es: "Mis padres son exigentes pero justos" },
+    { en: "My friends are sincere and supportive", es: "Mis amigos son sinceros y solidarios" },
+    { en: "I do not tolerate toxic attitudes", es: "No tolero actitudes tóxicas" },
+    { en: "My sister is creative, kind, and responsible", es: "Mi hermana es creativa, amable y responsable" },
+    { en: "My brother is independent but impatient", es: "Mi hermano es independiente pero impaciente" },
+    { en: "Do your parents listen to you?", es: "Tus padres te escuchan?" },
+    { en: "Do you have respectful friends? (formal)", es: "Tiene usted amigos respetuosos?" },
+    { en: "A true friend is loyal, honest, and patient", es: "Un amigo verdadero es leal, honesto y paciente" },
+    { en: "My family is small but very united", es: "Mi familia es pequeña pero muy unida" },
+    { en: "I choose loyal friends over popular friends", es: "Elijo amigos leales en lugar de amigos populares" }
+  ]
+};
 
   // ===================== Global cheats =====================
   const clampCheats = n => Math.max(0, Math.min(GLOBAL_CHEATS_MAX, n|0));
