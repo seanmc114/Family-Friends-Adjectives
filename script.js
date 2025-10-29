@@ -163,17 +163,35 @@ const DATASETS = { Present: PRESENT, Past: deepCopy(PRESENT), Future: deepCopy(P
   function setGlobalCheats(n){ localStorage.setItem(GLOBAL_CHEATS_KEY, String(clampCheats(n))); }
 
   // ===================== Compare =====================
-  const norm = s => (s||"").trim();
-  const endsWithQM = s => norm(s).endsWith("?");
-  function core(s){
-    let t = norm(s);
-    if (t.startsWith("¿")) t = t.slice(1);
-    if (t.endsWith("?"))  t = t.slice(0,-1);
-    t = t.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    t = t.replace(/ñ/gi, "n");
-    return t.replace(/\s+/g," ").toLowerCase();
+  // ===================== Compare =====================
+const norm = s => (s || "").trim();
+const endsWithQM = s => norm(s).endsWith("?");
+
+// Accents REQUIRED; ñ ≡ n; case ignored; ignore punctuation like final . or leading ¿
+function coreKeepAccents(s) {
+  let t = norm(s);
+
+  // Ignore a leading inverted question mark if typed
+  if (t.startsWith("¿")) t = t.slice(1);
+
+  // Strip only a final ? or . for lexical compare
+  if (t.endsWith("?") || t.endsWith(".")) {
+    t = t.slice(0, -1);
   }
-  function cmpAnswer(user, expected){ if (!endsWithQM(user)) return false; return core(user) === core(expected); }
+
+  // Treat ñ as n (both accepted)
+  t = t.replace(/ñ/gi, "n");
+
+  // Case-insensitive + collapse spaces
+  return t.replace(/\s+/g, " ").toLowerCase();
+}
+
+// Require '?' only if the EXPECTED target is a question
+function cmpAnswer(user, expected) {
+  const expIsQ = endsWithQM(expected);
+  if (expIsQ && !endsWithQM(user)) return false;
+  return coreKeepAccents(user) === coreKeepAccents(expected);
+}
 
   // ===================== Best/unlocks (per tense) =====================
   const STORAGE_PREFIX = "tqplus:v3";
