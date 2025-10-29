@@ -163,30 +163,32 @@ const DATASETS = { Present: PRESENT, Past: deepCopy(PRESENT), Future: deepCopy(P
   function setGlobalCheats(n){ localStorage.setItem(GLOBAL_CHEATS_KEY, String(clampCheats(n))); }
 
   // ===================== Compare =====================
-  // ===================== Compare =====================
 const norm = s => (s || "").trim();
 const endsWithQM = s => norm(s).endsWith("?");
 
-// Accents REQUIRED; ñ ≡ n; case ignored; ignore punctuation like final . or leading ¿
+// Accents REQUIRED; ñ ≡ n; ignore CAPITALS completely; ignore final '.' or leading '¿'
 function coreKeepAccents(s) {
   let t = norm(s);
 
-  // Ignore a leading inverted question mark if typed
+  // Remove leading inverted mark
   if (t.startsWith("¿")) t = t.slice(1);
 
-  // Strip only a final ? or . for lexical compare
+  // Remove ONLY a trailing ? or .
   if (t.endsWith("?") || t.endsWith(".")) {
     t = t.slice(0, -1);
   }
 
-  // Treat ñ as n (both accepted)
+  // Treat ñ as n so both are acceptable
   t = t.replace(/ñ/gi, "n");
 
-  // Case-insensitive + collapse spaces
-  return t.replace(/\s+/g, " ").toLowerCase();
+  // ✅ IGNORE CAPITAL LETTERS by always lowercasing
+  t = t.toLowerCase();
+
+  // Remove extra spaces
+  return t.replace(/\s+/g, " ");
 }
 
-// Require '?' only if the EXPECTED target is a question
+// Require '?' ONLY if expected Spanish is a question
 function cmpAnswer(user, expected) {
   const expIsQ = endsWithQM(expected);
   if (expIsQ && !endsWithQM(user)) return false;
